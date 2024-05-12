@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:local="clr-namespace:rpm_prodject"
+             x:Class="rpm_prodject.SignUp">
+    <ContentPage.Content>
+        <StackLayout Background="#F8F9FA" StackLayout.Spacing="10">
+
+            <ImageButton Source="back.png" x:Name="back" VerticalOptions="Start" HorizontalOptions="Start" Background="Transparent" HeightRequest="45" WidthRequest="45" Aspect="AspectFill" CornerRadius="100"
+						 Margin="20,40,0,0" Clicked="Back"/>
+            <Label Text="Регистрация" TextColor="#1A2530" FontSize="30" FontFamily="Roboto" FontAttributes="Bold"
+                 HorizontalOptions="CenterAndExpand" Margin="0,20,0,0"/>
+            <Label Text="Создадим аккаунт вместе!" TextColor="#707B81" FontSize="14" FontFamily="Roboto"
+                 HorizontalOptions="CenterAndExpand" />
+            <Label Text="Имя" TextColor="#1A2530" FontSize="16" FontFamily="Roboto" FontAttributes="Bold"
+                 VerticalOptions="Start" HorizontalOptions="Start" Margin="20,35,0,0" HeightRequest="20"/>
+            <Frame BackgroundColor="White" HasShadow="False" CornerRadius="50" Margin="20,5,20,0" HeightRequest="15">
+                <StackLayout>
+                    <local:CustomEntry
+									   x:Name="NameEntry"
+									   CornerRadius="30"
+									   IsCurvedCornersEnabled="True"
+									   HorizontalTextAlignment="Start"
+									   VerticalTextAlignment="Start"
+									   FontSize="14"
+									   HeightRequest="40"
+									   Placeholder="Alisson"
+									   PlaceholderColor="Gray"
+									   TextColor="#707B81"
+									   FontAttributes="Italic"
+									   HorizontalOptions="Start"
+									   CursorColor="Black"
+									   BorderColor="Transparent"
+									   BackgroundColor="Transparent"
+									   WidthRequest="270"/>
+                </StackLayout>
+            </Frame>
+            <Label Text="Эл. почта" TextColor="#1A2530" FontSize="16" FontFamily="Roboto" FontAttributes="Bold"
+     VerticalOptions="Start" HorizontalOptions="Start" Margin="20,15,0,0" HeightRequest="20"/>
+            <Frame BackgroundColor="White" HasShadow="False" CornerRadius="50" Margin="20,5,20,0" HeightRequest="15">
+                <StackLayout>
+                    <local:CustomEntry
+						   x:Name="EmailEntry"
+						   CornerRadius="30"
+						   IsCurvedCornersEnabled="True"
+						   HorizontalTextAlignment="Start"
+						   VerticalTextAlignment="Start"
+						   FontSize="14"
+						   HeightRequest="40"
+						   Placeholder="alissonBecker@gmail.com"
+						   PlaceholderColor="Gray"
+						   TextColor="#707B81"
+						   FontAttributes="Italic"
+						   HorizontalOptions="Start"
+						   CursorColor="Black"
+						   BorderColor="Transparent"
+						   BackgroundColor="Transparent"
+						   WidthRequest="270"/>
+                </StackLayout>
+            </Frame>
+            <Label Text="Пароль" TextColor="#1A2530" FontSize="16" FontFamily="Roboto" Margin="20,15,0,0" FontAttributes="Bold"
+                VerticalOptions="Start" HorizontalOptions="Start" />
+
+            <Frame BackgroundColor="White" HasShadow="False" CornerRadius="50" Margin="20,5,20,0" HeightRequest="15">
+                <StackLayout>
+                    <local:CustomEntry
+									   x:Name="PasswordEntry"
+									   CornerRadius="30"
+									   IsCurvedCornersEnabled="True"
+									   HorizontalTextAlignment="Start"
+									   VerticalTextAlignment="Start"
+									   FontSize="14"
+									   HeightRequest="40"
+									   Placeholder="••••••••"
+									   PlaceholderColor="Gray"
+									   TextColor="#707B81"
+									   IsPassword="True"
+									   HorizontalOptions="Start"
+									   CursorColor="Black"
+									   BorderColor="Transparent"
+									   BackgroundColor="Transparent"
+                                       WidthRequest="270"/>
+
+                </StackLayout>
+            </Frame>
+            <Button Text="Зарегистрироваться" TextTransform="None"  BackgroundColor="#5B9EE1" TextColor="White" FontFamily="Roboto" FontSize="18" WidthRequest="350" HeightRequest="60"
+					HorizontalOptions="Center" VerticalOptions="End" Padding="25,10,25,10" CornerRadius="30" FontAttributes="Bold" Margin="0,20,0,0" Clicked="Vhod">
+            </Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="rpm_prodject.AccountSettings">
+    <ContentPage.Content>
+        <StackLayout Background="#F8F9FA" Margin="20,40,20,0">
+            <StackLayout Orientation="Horizontal">
+                <ImageButton x:Name="back" VerticalOptions="Start" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="45" WidthRequest="45" Clicked="Back"/>
+                <Label Text="Настройки Профиля" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" VerticalTextAlignment="Center" TextColor="Black" FontSize="18" FontFamily="Roboto" FontAttributes="Bold"></Label>
+            </StackLayout>
+            <StackLayout VerticalOptions="Start">
+                <Label Text="Профиль" FontSize="18" FontFamily="Roboto" FontAttributes="Bold" TextColor="Black"
+       HorizontalOptions="Start" VerticalOptions="Start" Margin="0,20,0,15"></Label>
+
+                <StackLayout Spacing="5">
+                    <StackLayout Orientation="Horizontal" Spacing="20">
+                    <Image x:Name="uved11" HorizontalOptions="Start" VerticalOptions="Center" BackgroundColor="Transparent" WidthRequest="30" HeightRequest="30"></Image>
+                    <Label Text="Уведомления" FontSize="16" FontFamily="Roboto" FontAttributes="Italic" TextColor="#1A2530"
+       HorizontalOptions="Start" VerticalOptions="Center"></Label>
+                        <ImageButton Source="her.png" HorizontalOptions="EndAndExpand" VerticalOptions="Center" BackgroundColor="Transparent" WidthRequest="45" HeightRequest="45"></ImageButton>
+                </StackLayout>
+                    <Image Source="xyuhya2.png" Aspect="Fill"></Image>
+                    <StackLayout Orientation="Horizontal" Spacing="20">
+                        <Image x:Name="dostav11" HorizontalOptions="Start" VerticalOptions="Center" BackgroundColor="Transparent" WidthRequest="30" HeightRequest="30"></Image>
+                        <Label Text="Адрес доставки" FontSize="16" FontFamily="Roboto" FontAttributes="Italic" TextColor="#1A2530"
+       HorizontalOptions="Start" VerticalOptions="Center"></Label>
+                        <ImageButton Source="her.png" HorizontalOptions="EndAndExpand" VerticalOptions="Center" BackgroundColor="Transparent" WidthRequest="45" HeightRequest="45"></ImageButton>
+                </StackLayout>
+                    <Image Source="xyuhya2.png" Aspect="Fill"></Image>
+                    <StackLayout Orientation="Horizontal" Spacing="20">
+                        <Image x:Name="koshel11" HorizontalOptions="Start" VerticalOptions="Center" BackgroundColor="Transparent" WidthRequest="30" HeightRequest="30"></Image>
+                        <Label Text="Данные покупок" FontSize="16" FontFamily="Roboto" FontAttributes="Italic" TextColor="#1A2530"
+      HorizontalOptions="Start" VerticalOptions="Center"></Label>
+                        <ImageButton Source="her.png" HorizontalOptions="EndAndExpand" VerticalOptions="Center" BackgroundColor="Transparent" WidthRequest="45" HeightRequest="45"></ImageButton>
+                    </StackLayout>
+                    <Image Source="xyuhya2.png" Aspect="Fill"></Image>
+                    <StackLayout Orientation="Horizontal" Spacing="20">
+                        <Image x:Name="bin11" HorizontalOptions="Start" VerticalOptions="Center" BackgroundColor="Transparent" WidthRequest="30" HeightRequest="30"></Image>
+                        <Label Text="Удалить аккаунт" FontSize="16" FontFamily="Roboto" FontAttributes="Italic" TextColor="#1A2530"
+      HorizontalOptions="Start" VerticalOptions="Center"></Label>
+                        <ImageButton Source="her.png" HorizontalOptions="EndAndExpand" VerticalOptions="Center" BackgroundColor="Transparent" WidthRequest="45" HeightRequest="45"></ImageButton>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout VerticalOptions="Start">
+                <Label Text="Приложение" FontSize="18" FontFamily="Roboto" FontAttributes="Bold" TextColor="Black"
+       HorizontalOptions="Start" VerticalOptions="Start" Margin="0,20,0,15"></Label>
+                <StackLayout Spacing="5">
+                    <StackLayout Orientation="Horizontal">
+                <Label Text="Вход по отпечатку" FontSize="16" FontFamily="Roboto" FontAttributes="Italic" TextColor="#1A2530"
+       HorizontalOptions="Start" VerticalOptions="Center"></Label>
+                <ImageButton Source="On.png" HeightRequest="40" WidthRequest="40" BackgroundColor="Transparent" Pressed="ButtonTheme" HorizontalOptions="EndAndExpand" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <Image Source="xyuhya2.png" Aspect="Fill"></Image>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="PUSH-уведомления" FontSize="16" FontFamily="Roboto" FontAttributes="Italic" TextColor="#1A2530"
+HorizontalOptions="Start" VerticalOptions="Center"></Label>
+                        <ImageButton Source="Off.png" HeightRequest="40" WidthRequest="40" BackgroundColor="Transparent" Pressed="ButtonTheme" HorizontalOptions="EndAndExpand" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <Image Source="xyuhya2.png" Aspect="Fill"></Image>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Местоположение" FontSize="16" FontFamily="Roboto" FontAttributes="Italic" TextColor="#1A2530"
+HorizontalOptions="Start" VerticalOptions="Center"></Label>
+                        <ImageButton Source="Off.png" HeightRequest="40" WidthRequest="40" BackgroundColor="Transparent" Pressed="ButtonTheme" HorizontalOptions="EndAndExpand" VerticalOptions="Center"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

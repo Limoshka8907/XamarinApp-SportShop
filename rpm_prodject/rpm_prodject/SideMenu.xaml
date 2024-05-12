@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="rpm_prodject.SideMenu">
+    <ContentPage.Content>
+        <StackLayout Background="#1A2530">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="0" Spacing="20">
+                    <ImageButton x:Name="Emil" Margin="20,80,0,0" VerticalOptions="Start" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="70" WidthRequest="70" Clicked="profile_but"/>
+                    <StackLayout Spacing="5" Margin="20,10,0,0">
+                        <Label Text="Эй, 👋" TextColor="White" FontAttributes="Italic" FontSize="20"></Label>
+                    <Label x:Name="nameEntry" Text="Ваше имя" TextColor="White" FontAttributes="Bold" FontSize="30"></Label>
+                    </StackLayout>
+                    <StackLayout Spacing="5" Margin="20,30,0,0">
+                        <StackLayout Orientation="Horizontal" Spacing="15">
+                            <ImageButton x:Name="prof6" VerticalOptions="Center" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="25" WidthRequest="25" Clicked="profile_but"/>
+                            <Button Text="Профиль" TextTransform="None" Background="Transparent" FontFamily="Roboto" TextColor="White" FontSize="16" Clicked="profile_but"></Button>
+                    </StackLayout>
+                        <StackLayout Orientation="Horizontal" Spacing="15">
+                            <ImageButton x:Name="home6" VerticalOptions="Center" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="25" WidthRequest="25" Clicked="home6_but"/>
+                            <Button Text="Главная" TextTransform="None" Background="Transparent" FontFamily="Roboto" TextColor="White" FontSize="16" Clicked="home6_but"></Button>
+                    </StackLayout>
+                        <StackLayout Orientation="Horizontal" Spacing="15">
+                            <ImageButton x:Name="basket6" VerticalOptions="Center" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="25" WidthRequest="25" Clicked="basket_but"/>
+                            <Button Text="Мои покупки" TextTransform="None" Background="Transparent" FontFamily="Roboto" TextColor="White" FontSize="16" Clicked="basket_but"></Button>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Spacing="15">
+                            <ImageButton x:Name="izbr6" VerticalOptions="Center" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="25" WidthRequest="25" Clicked="izbr_but"/>
+                            <Button Text="Избранное" TextTransform="None" Background="Transparent" FontFamily="Roboto" TextColor="White" FontSize="16" Clicked="izbr_but"></Button>
+                    </StackLayout>
+                        <StackLayout Orientation="Horizontal" Spacing="15">
+                            <ImageButton x:Name="zakaz6" VerticalOptions="Center" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="25" WidthRequest="25" Clicked="zakaz_but"/>
+                            <Button Text="Заказы" TextTransform="None" Background="Transparent" FontFamily="Roboto" TextColor="White" FontSize="16" Clicked="zakaz_but"></Button>
+                    </StackLayout>
+                        <StackLayout Orientation="Horizontal" Spacing="15">
+                        <ImageButton x:Name="uved6" VerticalOptions="Center" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="25" WidthRequest="25" Clicked="uved_but"/>
+                            <Button Text="Уведомления" TextTransform="None" Background="Transparent" FontFamily="Roboto" TextColor="White" FontSize="16" Clicked="uved_but"></Button>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Margin="20,10,0,0">
+                        <Image x:Name="line6" Aspect="Fill"></Image>
+                        <StackLayout Orientation="Horizontal" Spacing="15" Margin="0,10,0,0">
+                            <ImageButton x:Name="viti6" VerticalOptions="Center" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="25" WidthRequest="25" Clicked="viti_but"/>
+                            <Button Text="Выйти" TextTransform="None" Background="Transparent" FontFamily="Roboto" TextColor="White" FontSize="16" Clicked="viti_but"></Button>
+                        </StackLayout>
+                        
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="rpm_prodject.Notifications">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never">
+                <StackLayout Background="#F8F9FA" Margin="20,40,20,0">
+                    <StackLayout Orientation="Horizontal" Spacing="15">
+                        <ImageButton Source="back.png" VerticalOptions="Start" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="45" WidthRequest="45" Clicked="Back"/>
+                        <Label Text="Уведомления" HorizontalOptions="EndAndExpand" VerticalOptions="Start" VerticalTextAlignment="Center" TextColor="Black" FontSize="18" FontFamily="Roboto" FontAttributes="Bold" Margin="0,10,0,0"></Label>
+                        <Button Clicked="clear_all" Text="Очистить" TextTransform="None" TextColor="#5B9EE1" FontSize="16" FontFamily="Roboto" Background="Transparent" VerticalOptions="Start" HorizontalOptions="End" HeightRequest="45" WidthRequest="100"></Button>
+                    </StackLayout>
+                    <StackLayout Margin="0,20,0,0" x:Name="lay1" >
+                        <Label Text="Сегодня" FontSize="18" FontFamily="Roboto" FontAttributes="Bold" TextColor="Black"
+HorizontalOptions="Start" VerticalOptions="Start"></Label>
+                        <Grid HeightRequest="100" HorizontalOptions="Center" VerticalOptions="Start">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.25*"></ColumnDefinition>
+                                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                                <ColumnDefinition Width="0.25*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <ImageButton x:Name="Kross1" Grid.Column="0" HeightRequest="100" WidthRequest="100" HorizontalOptions="Start" VerticalOptions="Center"
+                                 BackgroundColor="Transparent" CornerRadius="20" Clicked="details_but"></ImageButton>
+                            <StackLayout Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center">
+                                <Label Text="Акция! Суперскидка!" FontSize="16" FontFamily="Roboto" FontAttributes="Bold" TextColor="Black"
+                                HorizontalOptions="Start" VerticalOptions="Start"></Label>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="$364.95" FontSize="16" FontFamily="Roboto" FontAttributes="Bold" TextColor="Black"
+                                HorizontalOptions="Start" VerticalOptions="Start"></Label>
+                                    <Label Text="$260.00" FontSize="16" FontFamily="Roboto" TextColor="#707B81"
+                                HorizontalOptions="Start" VerticalOptions="Start"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout Grid.Column="2" VerticalOptions="Start" HorizontalOptions="EndAndExpand">
+                                <Label x:Name="time1" Text="6 минут" FontSize="16" FontFamily="Roboto" TextColor="#707B81" FontAttributes="Italic"
+                                HorizontalOptions="Start" VerticalOptions="Start"></Label>
+                                <Button x:Name="btn_blue1" HorizontalOptions="Center" VerticalOptions="Start" WidthRequest="10" HeightRequest="10" CornerRadius="100"
+                                    Background="#5B9EE1" ></Button>
+                            </StackLayout>
+                        </Grid>
+                        <Grid HeightRequest="100" HorizontalOptions="Center" VerticalOptions="Start">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.25*"></ColumnDefinition>
+                                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                                <ColumnDefinition Width="0.25*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <ImageButton x:Name="Kross2" Grid.Column="0" HeightRequest="100" WidthRequest="100" HorizontalOptions="Start" VerticalOptions="Center"
+             BackgroundColor="Transparent" CornerRadius="20" Clicked="details_but"></ImageButton>
+                            <StackLayout Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center">
+                                <Label Text="Новинка! Успейте приобрести!" FontSize="16" FontFamily="Roboto" FontAttributes="Bold" TextColor="Black"
+            HorizontalOptions="Start" VerticalOptions="Start"></Label>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="$364.95" FontSize="16" FontFamily="Roboto" FontAttributes="Bold" TextColor="Black"
+            HorizontalOptions="Start" VerticalOptions="Start"></Label>
+                                    <Label Text="$260.00" FontSize="16" FontFamily="Roboto" TextColor="#707B81"
+            HorizontalOptions="Start" VerticalOptions="Start"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout Grid.Column="2" VerticalOptions="Start" HorizontalOptions="EndAndExpand">
+                                <Label x:Name="time2" Text="6 минут" FontSize="16" FontFamily="Roboto" TextColor="#707B81" FontAttributes="Italic"
+            HorizontalOptions="Start" VerticalOptions="Start"></Label>
+                                <Button x:Name="btn_blue2" HorizontalOptions="Center" VerticalOptions="Start" WidthRequest="10" HeightRequest="10" CornerRadius="100"
+                Background="#5B9EE1" ></Button>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout Margin="0,20,0,0" x:Name="lay2">
+                        <Label Text="Вчера" FontSize="18" FontFamily="Roboto" FontAttributes="Bold" TextColor="Black"
+HorizontalOptions="Start" VerticalOptions="Start"></Label>
+                        <Grid HeightRequest="100" HorizontalOptions="Center" VerticalOptions="Start">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.25*"></ColumnDefinition>
+                                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                                <ColumnDefinition Width="0.25*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <ImageButton x:Name="Kross44" Grid.Column="0" HeightRequest="100" WidthRequest="100" HorizontalOptions="Start" VerticalOptions="Center"
+                                 BackgroundColor="Transparent" CornerRadius="20" Clicked="details_but"></ImageButton>
+                            <StackLayout Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center">
+                                <Label Text="Скидка продавца Nike Co." FontSize="16" FontFamily="Roboto" FontAttributes="Bold" TextColor="Black"
+                                HorizontalOptions="Start" VerticalOptions="Start"></Label>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="$364.95" FontSize="16" FontFamily="Roboto" FontAttributes="Bold" TextColor="Black"
+                                HorizontalOptions="Start" VerticalOptions="Start"></Label>
+                                    <Label Text="$260.00" FontSize="16" FontFamily="Roboto" TextColor="#707B81"
+                                HorizontalOptions="Start" VerticalOptions="Start"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout Grid.Column="2" VerticalOptions="Start" HorizontalOptions="EndAndExpand">
+                                <Label Text="12:43" FontSize="16" FontFamily="Roboto" TextColor="#707B81" FontAttributes="Italic"
+                                HorizontalOptions="Start" VerticalOptions="Start"></Label>
+                            </StackLayout>
+                        </Grid>
+                        <Grid HeightRequest="100" HorizontalOptions="Center" VerticalOptions="Start">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.25*"></ColumnDefinition>
+                                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                                <ColumnDefinition Width="0.25*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <ImageButton x:Name="Kross4" Grid.Column="0" HeightRequest="100" WidthRequest="100" HorizontalOptions="Start" VerticalOptions="Center"
+             BackgroundColor="Transparent" CornerRadius="20" Clicked="details_but"></ImageButton>
+                            <StackLayout Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center">
+                                <Label Text="Хорошие новости! Персональная акция!" FontSize="16" FontFamily="Roboto" FontAttributes="Bold" TextColor="Black"
+            HorizontalOptions="Start" VerticalOptions="Start"></Label>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="$364.95" FontSize="16" FontFamily="Roboto" FontAttributes="Bold" TextColor="Black"
+            HorizontalOptions="Start" VerticalOptions="Start"></Label>
+                                    <Label Text="$260.00" FontSize="16" FontFamily="Roboto" TextColor="#707B81"
+            HorizontalOptions="Start" VerticalOptions="Start"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout Grid.Column="2" VerticalOptions="Start" HorizontalOptions="EndAndExpand">
+                                <Label Text="18:20" FontSize="16" FontFamily="Roboto" TextColor="#707B81" FontAttributes="Italic"
+            HorizontalOptions="Start" VerticalOptions="Start"></Label>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

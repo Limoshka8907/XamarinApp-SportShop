@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="rpm_prodject.Favourite">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never">
+                <StackLayout Background="#F8F9FA" Margin="20,40,20,0">
+                    <StackLayout Orientation="Horizontal">
+                        <ImageButton x:Name="back" VerticalOptions="Start" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="45" WidthRequest="45" Clicked="Back"/>
+                        <Label Text="Избранное" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" VerticalTextAlignment="Center" TextColor="Black" FontSize="18" FontFamily="Roboto" FontAttributes="Bold"></Label>
+                        <ImageButton x:Name="hearth99" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="End" HeightRequest="45" WidthRequest="45"></ImageButton>
+                    </StackLayout>
+                    <StackLayout x:Name="mainLayour">
+                        <!--<StackLayout Orientation="Horizontal" Margin="0,20,0,0" Spacing="20" HorizontalOptions="Center" VerticalOptions="Start">
+
+                            <Frame Background="White" CornerRadius="20" HasShadow="False" Padding="10" WidthRequest="165" HeightRequest="225">
+                                <StackLayout>
+                                    <ImageButton x:Name="WhiteBlueRed9" BackgroundColor="Transparent" HeightRequest="120" WidthRequest="145" VerticalOptions="Start" HorizontalOptions="Center" Clicked="details_but"></ImageButton>
+                                    <Label Text="Акция" TextTransform="Uppercase" HorizontalOptions="Start" VerticalOptions="Start" TextColor="#5B9EE1" FontFamily="Roboto" FontSize="14" FontAttributes="Italic"></Label>
+                                    <Label Text="Nike Jordan" HorizontalOptions="Start" VerticalOptions="Start" TextColor="Black" FontFamily="Roboto" FontSize="20" FontAttributes="Bold"></Label>
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+                                        <Label Text="$58.7" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" FontFamily="Roboto" FontSize="20" FontAttributes="Bold"></Label>
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" VerticalOptions="Center">
+                                            <Button Background="#FDFFA7" WidthRequest="20" HeightRequest="20" CornerRadius="100"></Button>
+                                            <Button Background="#6CCFC0" WidthRequest="20" HeightRequest="20" CornerRadius="100"></Button>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                            <Frame Background="White" CornerRadius="20" HasShadow="False" Padding="10" WidthRequest="165" HeightRequest="225">
+                                <StackLayout>
+                                    <ImageButton x:Name="Blue9" BackgroundColor="Transparent" HeightRequest="120" WidthRequest="145" VerticalOptions="Start" HorizontalOptions="Center" Background="Transparent" Clicked="details_but"></ImageButton>
+                                    <Label Text="Акция" TextTransform="Uppercase" HorizontalOptions="Start" VerticalOptions="Start" TextColor="#5B9EE1" FontFamily="Roboto" FontSize="14" FontAttributes="Italic"></Label>
+                                    <Label Text="Nike Air Max" HorizontalOptions="Start" VerticalOptions="Start" TextColor="Black" FontFamily="Roboto" FontSize="20" FontAttributes="Bold"></Label>
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+                                        <Label Text="$37.8" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" FontFamily="Roboto" FontSize="20" FontAttributes="Bold"></Label>
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" VerticalOptions="Center">
+                                            <Button Background="#92CAFF" WidthRequest="20" HeightRequest="20" CornerRadius="100"></Button>
+                                            <Button Background="#656B7E" WidthRequest="20" HeightRequest="20" CornerRadius="100"></Button>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>-->
+
+                        <!--<StackLayout Orientation="Horizontal" Margin="0,20,0,0" Spacing="20" HorizontalOptions="Center" VerticalOptions="Start">
+
+                            <Frame Background="White" CornerRadius="20" HasShadow="False" Padding="10" WidthRequest="165" HeightRequest="225">
+                                <StackLayout>
+                                    <ImageButton x:Name="WhiteBlue9" BackgroundColor="Transparent" HeightRequest="120" WidthRequest="145" VerticalOptions="Start" HorizontalOptions="Center" Clicked="details_but"></ImageButton>
+                                    <Label Text="Акция" TextTransform="Uppercase" HorizontalOptions="Start" VerticalOptions="Start" TextColor="#5B9EE1" FontFamily="Roboto" FontSize="14" FontAttributes="Italic"></Label>
+                                    <Label Text="Nike Club Max" HorizontalOptions="Start" VerticalOptions="Start" TextColor="Black" FontFamily="Roboto" FontSize="20" FontAttributes="Bold"></Label>
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+                                        <Label Text="$47.7" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" FontFamily="Roboto" FontSize="20" FontAttributes="Bold"></Label>
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" VerticalOptions="Center">
+                                            <Button Background="#1685D4" WidthRequest="20" HeightRequest="20" CornerRadius="100"></Button>
+                                            <Button Background="#F6C954" WidthRequest="20" HeightRequest="20" CornerRadius="100"></Button>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                            <Frame Background="White" CornerRadius="20" HasShadow="False" Padding="10" WidthRequest="165" HeightRequest="225">
+                                <StackLayout>
+                                    <ImageButton x:Name="WhiteRed9" BackgroundColor="Transparent" HeightRequest="120" WidthRequest="145" VerticalOptions="Start" HorizontalOptions="Center" Background="Transparent" Clicked="details_but"></ImageButton>
+                                    <Label Text="Акция" TextTransform="Uppercase" HorizontalOptions="Start" VerticalOptions="Start" TextColor="#5B9EE1" FontFamily="Roboto" FontSize="14" FontAttributes="Italic"></Label>
+                                    <Label Text="Nike Air Max" HorizontalOptions="Start" VerticalOptions="Start" TextColor="Black" FontFamily="Roboto" FontSize="20" FontAttributes="Bold"></Label>
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+                                        <Label Text="$57.6" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" FontFamily="Roboto" FontSize="20" FontAttributes="Bold"></Label>
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" VerticalOptions="Center">
+                                            <Button Background="#7DDBDA" WidthRequest="20" HeightRequest="20" CornerRadius="100"></Button>
+                                            <Button Background="#606ACB" WidthRequest="20" HeightRequest="20" CornerRadius="100"></Button>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>-->
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            <Frame VerticalOptions="EndAndExpand"  HorizontalOptions="Center" Background="#5B9EE1" WidthRequest="360"
+                 HeightRequest="35">
+                <StackLayout Orientation="Horizontal" Margin="5,0,5,5">
+                    <ImageButton Source="home.png" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" HeightRequest="45" WidthRequest="45" Clicked="home_but"/>
+                    <ImageButton Source="messages.png" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" HeightRequest="45" WidthRequest="45" Clicked="uved_but"/>
+                    <ImageButton Source="basket_futter.png" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" HeightRequest="45" WidthRequest="45" Clicked="basket_but"/>
+                    <ImageButton Source="profile.png" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" HeightRequest="45" WidthRequest="45" Clicked="profile_but"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

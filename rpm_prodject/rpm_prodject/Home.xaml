@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:rpm_prodject"
+             x:Class="rpm_prodject.Home">
+    <ContentPage.Content>
+
+        <StackLayout Background="#F8F9FA" StackLayout.Spacing="10">
+            <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never">
+                <StackLayout>
+                    <!--контейнер нужен для корректного отображения нижнего бара-->
+                    <StackLayout Orientation="Horizontal" Margin="0,0,0,20" >
+                        <ImageButton x:Name="Fourpoint" VerticalOptions="Start" Background="Transparent" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="45" WidthRequest="45" Margin="20,40,0,0" Clicked="Fourpoint_but"/>
+                        <StackLayout Spacing="-7" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="0,40,0,0">
+                            <Label x:Name="localtionn" Text="Местоположение" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"  WidthRequest="180" TextColor="#707B81" FontSize="14" FontFamily="Roboto" FontAttributes="Italic" Margin="15,0,0,0"></Label>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                <Image x:Name="location" HeightRequest="20" WidthRequest="20"></Image>
+                                <Picker x:Name="picker" HorizontalTextAlignment="Center" FontAttributes="Bold" WidthRequest="140"  FontSize="16">
+                                    <Picker.Items >
+                                        <x:String>ул. Чатаева, 18</x:String>
+                                        <x:String>ул. Баумана, 23а</x:String>
+                                        <x:String>ул. Кул Гали, 90</x:String>
+                                        <x:String>ул. Восстания, 84</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
+                        </StackLayout>
+                        <ImageButton Source="Basket.png" x:Name="Basket" Margin="0,40,20,0" BackgroundColor="Transparent" VerticalOptions="StartAndExpand" HorizontalOptions="End" HeightRequest="45" WidthRequest="45" Clicked="basket_but"></ImageButton>
+                    </StackLayout>
+
+                    <Frame BackgroundColor="White" HasShadow="False" CornerRadius="50" Margin="20,0,20,0" Padding="10" HeightRequest="30">
+                        <StackLayout Orientation="Horizontal">
+                            <ImageButton x:Name="Search" VerticalOptions="Start" BackgroundColor="Transparent" Background="Transparent" HorizontalOptions="Start" HeightRequest="30" WidthRequest="30" Margin="5" Clicked="SearchS_but"></ImageButton>
+                            <local:CustomEntry
+							   x:Name="SearchS"
+							   IsCurvedCornersEnabled="True"
+							   HorizontalTextAlignment="Start"
+							   VerticalTextAlignment="End"
+							   FontSize="16"
+							   Placeholder="Поиск..."
+                               WidthRequest="270"
+                               FontAttributes="Italic"
+							   PlaceholderColor="Gray"
+							   TextColor="#707B81"
+							   HorizontalOptions="Start"
+							   CursorColor="Black"
+							   BackgroundColor="Transparent"
+                                Completed="OnSearchCompleted"/>
+                        </StackLayout>
+                    </Frame>
+                    <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
+                        <StackLayout Orientation="Horizontal" StackLayout.Spacing="10" Margin="20,30,20,0" x:Name="categoryStack">
+                            <!--<Button Text="Кроссовки" TextColor="White" TextTransform="None" BackgroundColor="#5B9EE1" CornerRadius="60" HeightRequest="35" WidthRequest="170" Padding="15,0,15,0" FontSize="16" Clicked="krossovki_but"></Button>
+                            <Button Text="Одежда" TextColor="White" TextTransform="None" BackgroundColor="#5B9EE1" CornerRadius="60" HeightRequest="35" WidthRequest="170" Padding="15,0,15,0" FontSize="16" Clicked="odeshda_but"></Button>
+                            <Button Text="Аксессуары" TextColor="White" TextTransform="None" BackgroundColor="#5B9EE1" CornerRadius="60" HeightRequest="35" WidthRequest="170" Padding="15,0,15,0" FontSize="16" Clicked="acsess_but"></Button>
+                            <Button Text="Питание" TextColor="White" TextTransform="None" BackgroundColor="#5B9EE1" CornerRadius="60" HeightRequest="35" WidthRequest="170" Padding="15,0,15,0" FontSize="16" Clicked="pitanie_but"></Button>-->
+                        </StackLayout>
+                    </ScrollView>
+
+                    <StackLayout Orientation="Horizontal" Margin="20,10,20,0">
+                        <Label Text="Популярное" VerticalTextAlignment="Center" FontAttributes="Bold" TextColor="#1A2530" FontSize="16" HorizontalOptions="Start" VerticalOptions="Center"></Label>
+                        <Button Text="Смотреть все" TextTransform="None" FontAttributes="Italic" TextColor="#5B9EE1" Background="Transparent" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Clicked="popul_but"></Button>
+                    </StackLayout>
+
+                    <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
+                        <StackLayout Orientation="Horizontal" Margin="20,0,20,0" StackLayout.Spacing="20" HorizontalOptions="CenterAndExpand" x:Name="scrollGoods">
+                            <!--<Frame CornerRadius="15" HasShadow="False" Padding="0" WidthRequest="150" HeightRequest="180" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <StackLayout>
+                                    <ImageButton x:Name="RedKross" BackgroundColor="Transparent" Margin="0,20,0,0" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" HeightRequest="70" WidthRequest="100" Clicked="details_but"></ImageButton>
+                                    <Label Text="Акция" Margin="20,0,20,0" TextTransform="Uppercase" TextColor="#5B9EE1" FontAttributes="Italic" FontSize="12"></Label>
+                                    <Label Text="Nike Jordan" Margin="20,0,20,0" TextColor="#1A2530" FontAttributes="Bold" FontSize="16"></Label>
+                                
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+                                        <Label Text="$493.00" Margin="20,0,20,0" TextColor="#1A2530" HorizontalOptions="Start" FontAttributes="Bold" FontSize="16" VerticalTextAlignment="Center"></Label>
+                                        <ImageButton x:Name="Pluce" HorizontalOptions="EndAndExpand" Background="Transparent" HeightRequest="35" WidthRequest="35"></ImageButton>
+                                </StackLayout>
+                                
+                                </StackLayout>
+                            </Frame>
+                            <Frame CornerRadius="15" HasShadow="False" Padding="0" WidthRequest="150" HeightRequest="180" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <StackLayout>
+                                    <ImageButton x:Name="BlueKross" Margin="0,20,0,0" VerticalOptions="Start" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" HeightRequest="70" WidthRequest="100" Clicked="details_but"></ImageButton>
+                                    <Label Text="Акция" Margin="20,0,20,0" TextTransform="Uppercase" TextColor="#5B9EE1" FontAttributes="Italic" FontSize="12"></Label>
+                                    <Label Text="Nike Jordan" Margin="20,0,20,0" TextColor="#1A2530" FontAttributes="Bold" FontSize="16"></Label>
+
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+                                        <Label Text="$493.00" Margin="20,0,20,0" TextColor="#1A2530" HorizontalOptions="Start" FontAttributes="Bold" FontSize="16" VerticalTextAlignment="Center"></Label>
+                                        <ImageButton x:Name="Pluce1" HorizontalOptions="EndAndExpand" Background="Transparent" HeightRequest="35" WidthRequest="35"></ImageButton>
+                                    </StackLayout>
+
+                                </StackLayout>
+                            </Frame>
+                            <Frame CornerRadius="15" HasShadow="False" Padding="0" WidthRequest="150" HeightRequest="180" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <StackLayout>
+                                    <ImageButton x:Name="WhiteBlueKross1" Margin="0,20,0,0" VerticalOptions="Start" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" HeightRequest="70" WidthRequest="100" Clicked="details_but"></ImageButton>
+                                    <Label Text="Акция" Margin="20,0,20,0" TextTransform="Uppercase" TextColor="#5B9EE1" FontAttributes="Italic" FontSize="12"></Label>
+                                    <Label Text="Nike Jordan" Margin="20,0,20,0" TextColor="#1A2530" FontAttributes="Bold" FontSize="16"></Label>
+
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+                                        <Label Text="$493.00" Margin="20,0,20,0" TextColor="#1A2530" HorizontalOptions="Start" FontAttributes="Bold" FontSize="16" VerticalTextAlignment="Center"></Label>
+                                        <ImageButton x:Name="Pluce2" HorizontalOptions="EndAndExpand" Background="Transparent" HeightRequest="35" WidthRequest="35"></ImageButton>
+                                    </StackLayout>
+
+                                </StackLayout>
+                            </Frame>-->
+                        </StackLayout>
+                    </ScrollView>
+                    <StackLayout Orientation="Horizontal" Margin="20,10,20,0">
+                        <Label Text="Новинки" VerticalTextAlignment="Center" FontAttributes="Bold" TextColor="#1A2530" FontSize="16" HorizontalOptions="Start" VerticalOptions="Center"></Label>
+                        <Button Text="Смотреть все" TextTransform="None" FontAttributes="Italic" TextColor="#5B9EE1" Background="Transparent" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Clicked="novin_but"></Button>
+                    </StackLayout>
+                    <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
+                        <StackLayout x:Name="stack_special" Orientation="Horizontal" Margin="20,0,20,40" StackLayout.Spacing="20" HorizontalOptions="CenterAndExpand">
+                            <!--<Frame Background="White" CornerRadius="15" HasShadow="False" WidthRequest="250">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="0.8*"/>
+                                    </Grid.ColumnDefinitions>
+                                    --><!--<StackLayout Grid.Column="0">
+                                        <Label Text="СПЕЦИАЛЬНО ДЛЯ ВАС" TextColor="#5B9EE1" FontSize="11"></Label>
+                                        <Label Text="Nike Air Jordan" TextColor="#1A2530" FontAttributes="Bold" FontSize="16"></Label>
+                                        <Label Text="$849.69" TextColor="#1A2530" FontAttributes="Bold" FontSize="16"></Label>
+                                    </StackLayout>
+                                    <StackLayout Grid.Column="1">
+                                        <ImageButton x:Name="WhiteBlueKross" VerticalOptions="CenterAndExpand" HorizontalOptions="End" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="200" Clicked="details_but"></ImageButton>
+                                    </StackLayout>--><!--
+                                </Grid>
+                            </Frame>
+                            <Frame Background="White" CornerRadius="15" HasShadow="False" WidthRequest="250">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="0.8*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Grid.Column="0">
+                                        <Label Text="СПЕЦИАЛЬНО ДЛЯ ВАС" TextColor="#5B9EE1" FontSize="11"></Label>
+                                        <Label Text="Nike Jordan" TextColor="#1A2530" FontAttributes="Bold" FontSize="16"></Label>
+                                        <Label Text="$493.00" TextColor="#1A2530" FontAttributes="Bold" FontSize="16"></Label>
+                                    </StackLayout>
+                                    <StackLayout Grid.Column="1">
+                                        <ImageButton x:Name="RedKross1" VerticalOptions="CenterAndExpand" HorizontalOptions="End" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="200" Clicked="details_but"></ImageButton>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>-->
+                        </StackLayout>
+                    </ScrollView>
+                </StackLayout>
+            </ScrollView>
+            <Frame VerticalOptions="EndAndExpand"  HorizontalOptions="Center" Background="#5B9EE1" WidthRequest="360"
+                             HeightRequest="35">
+                <StackLayout Orientation="Horizontal" Margin="5,0,5,5">
+                    <ImageButton Source="home.png" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" HeightRequest="45" WidthRequest="45" Clicked="home_but"/>
+                    <ImageButton Source="messages.png" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" HeightRequest="45" WidthRequest="45" Clicked="uved_but"/>
+                    <ImageButton Source="basket_futter.png" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" HeightRequest="45" WidthRequest="45" Clicked="basket_but"/>
+                    <ImageButton Source="profile.png" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" HeightRequest="45" WidthRequest="45" Clicked="profile_but"/>
+                </StackLayout>
+            </Frame>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="rpm_prodject.MainPage">
+
+    <AbsoluteLayout BackgroundColor="Transparent">
+        <Image x:Name="image_first_screen" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+               AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
+        <Button Text="Присоединиться" TextTransform="None"  BackgroundColor="#5B9EE1" TextColor="White" FontAttributes="Bold" FontFamily="Roboto" FontSize="18" WidthRequest="250"
+        HorizontalOptions="Center" VerticalOptions="End" Padding="25,10,25,10" CornerRadius="30"
+        AbsoluteLayout.LayoutBounds="0.5,0.925,300,100" AbsoluteLayout.LayoutFlags="PositionProportional" Clicked="But1_first_screen"/>
+    </AbsoluteLayout>
+
+</ContentPage>

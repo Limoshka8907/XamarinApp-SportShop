@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:rpm_prodject"
+             x:Class="rpm_prodject.Profile">
+    <ContentPage.Content>
+        <StackLayout Background="#F8F9FA">
+            <StackLayout Orientation="Horizontal" Margin="20,40,20,0">
+                <ImageButton x:Name="back" VerticalOptions="Start" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="45" WidthRequest="45" Clicked="Back"/>
+                <Label Text="Профиль" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" VerticalTextAlignment="Center" TextColor="Black" FontSize="18" FontFamily="Roboto" FontAttributes="Bold"></Label>
+                <ImageButton x:Name="izm9" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="End" HeightRequest="25" WidthRequest="25" Margin="20,0,0,0" Clicked="Vhod"></ImageButton>
+            </StackLayout>
+
+            <ImageButton x:Name="Emil" BackgroundColor="Transparent" WidthRequest="100" HeightRequest="100" Margin="0,20,0,0"></ImageButton>
+
+            <Label x:Name="MyName" Text="Ваше имя" HorizontalOptions="Center" VerticalOptions="Start" Margin="20,10,20,0"
+                   TextColor="Black" FontSize="20" FontAttributes="Bold" FontFamily="Roboto"></Label>
+                
+                <Label Text="Имя" TextColor="#1A2530" FontSize="16" FontFamily="Roboto" FontAttributes="Bold"
+                VerticalOptions="Start" HorizontalOptions="Start" Margin="20,35,0,0" HeightRequest="20"/>
+            <Frame BackgroundColor="White" HasShadow="False" CornerRadius="50" Margin="20,5,20,0" HeightRequest="15">
+                <StackLayout>
+                    <local:CustomEntry
+								   x:Name="NameEntry"
+								   CornerRadius="30"
+								   IsCurvedCornersEnabled="True"
+								   HorizontalTextAlignment="Start"
+								   VerticalTextAlignment="Start"
+								   FontSize="14"
+								   HeightRequest="40"
+								   Placeholder="Alisson"
+								   PlaceholderColor="Gray"
+								   TextColor="#707B81"
+								   FontAttributes="Italic"
+								   HorizontalOptions="Start"
+								   CursorColor="Black"
+								   BorderColor="Transparent"
+								   BackgroundColor="Transparent"/>
+                </StackLayout>
+            </Frame>
+            <Label Text="Пароль" TextColor="#1A2530" FontSize="16" FontFamily="Roboto" Margin="20,15,0,0" FontAttributes="Bold"
+               VerticalOptions="Start" HorizontalOptions="Start" />
+
+            <Frame BackgroundColor="White" HasShadow="False" CornerRadius="50" Margin="20,5,20,0" HeightRequest="15">
+                <StackLayout>
+                    <local:CustomEntry
+								   x:Name="PasswordEntry"
+								   CornerRadius="30"
+								   IsCurvedCornersEnabled="True"
+								   HorizontalTextAlignment="Start"
+								   VerticalTextAlignment="Start"
+								   FontSize="14"
+								   HeightRequest="40"
+								   Placeholder="••••••••"
+								   PlaceholderColor="Gray"
+								   TextColor="#707B81"
+								   IsPassword="True"
+								   HorizontalOptions="Start"
+								   CursorColor="Black"
+								   BorderColor="Transparent"
+								   BackgroundColor="Transparent"/>
+                </StackLayout>
+            </Frame>
+                </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
