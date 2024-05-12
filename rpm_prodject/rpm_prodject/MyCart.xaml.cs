@@ -20,9 +20,6 @@ namespace rpm_prodject
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
             back.Source = ImageSource.FromResource("rpm_prodject.images.back.png");
-            //BlueKross8.Source = ImageSource.FromResource("rpm_prodject.images.BlueKross8.png");
-            //WhiteRedKross8.Source = ImageSource.FromResource("rpm_prodject.images.WhiteRedKross8.png");
-            //PurpleKross8.Source = ImageSource.FromResource("rpm_prodject.images.PurpleKross8.png");
 
             line8.Source = ImageSource.FromResource("rpm_prodject.images.line8.png");
             LoadForm();
@@ -44,7 +41,7 @@ namespace rpm_prodject
             LoadForm();
             MyCart my = new MyCart();
             var navigation = Application.Current.MainPage.Navigation;
-            await navigation.PopAsync(); // Убрать текущую страницу
+            await navigation.PopAsync(); 
             await navigation.PushAsync(new MyCart());
         }
 
@@ -63,11 +60,10 @@ namespace rpm_prodject
                     {
                         pass = false;
                         await DisplayAlert("Внимание", $"Товар {product.Name} отсутствует на складе, извините за неудобоство, Товара на складе сейчас: {count}", "ОК");
-                        //Busket.productQuantities.Remove(product.Id);
-                        //Busket._products.Remove(product);
+;
                         continue;
                     }
-                    //product.Name += $"Size:{Busket.size[i]} Color: {Busket.color[i].ToHex()}";
+   
                     dbManager.InsertOrders(product, Busket.cost.ToString(), Busket.productQuantities[product.Id], Busket.color[i].ToHex().ToString(), Busket.size[i]);
                     dbManager.UpdateGoodCount((count - Busket.productQuantities[product.Id]).ToString(), product.Id);
                     i++;
@@ -109,18 +105,18 @@ namespace rpm_prodject
             {
 
 
-                // Безопасно увеличиваем количество товара, если он есть в словаре
+ 
                 if (Busket.productQuantities.TryGetValue(product.Id, out int currentQuantity))
                 {
-                    //Busket.productQuantities[product.Id] = currentQuantity + 1;
+                 
                 }
                 else
                 {
-                    // Если товара нет в словаре, добавляем его с количеством 1
+              
                     Busket.productQuantities.Add(product.Id, 1);
                 }
 
-                // Создайте Grid для карточки
+         
                 Grid productCardGrid = new Grid
                 {
                     HeightRequest = 100,
@@ -134,10 +130,10 @@ namespace rpm_prodject
 
                 };
 
-                // Создайте изображение продукта
+             
                 ImageButton productImage = new ImageButton
                 {
-                    //Grid.Column = 0,
+                   
                     Source = ImageSource.FromUri(new Uri(product.Image)),
                     HorizontalOptions = LayoutOptions.Start,
                     VerticalOptions = LayoutOptions.Center,
@@ -150,7 +146,7 @@ namespace rpm_prodject
                 Grid.SetColumn(productImage, 0);
                 ImageButton colorImage = new ImageButton
                 {
-                    //Grid.Column = 0,
+                   
                     BackgroundColor = (Busket.color[i]),
                     HorizontalOptions = LayoutOptions.Start,
                     VerticalOptions = LayoutOptions.Center,
@@ -158,20 +154,20 @@ namespace rpm_prodject
                     HeightRequest = 10,
                     CornerRadius = 15,
                     Margin = 4
-                    //BackgroundColor = Color.Transparent,
+                    
                 };
                 productCardGrid.Children.Add(colorImage);
                 Grid.SetColumn(colorImage, 0);
-                // Создайте стек для содержимого карточки
+              
                 StackLayout productCardContentStackLayout = new StackLayout
                 {
-                    //Grid.Column = 1,
+                    
                     HorizontalOptions = LayoutOptions.FillAndExpand
                 };
                 productCardGrid.Children.Add(productCardContentStackLayout);
                 Grid.SetColumn(productCardContentStackLayout, 1);
 
-                // Создайте заголовок продукта
+               
                 Label productTitleLabel = new Label
                 {
                     Text = product.Name,
@@ -183,7 +179,7 @@ namespace rpm_prodject
                     TextColor = Color.Black,
                     HorizontalTextAlignment = TextAlignment.Start
                 };
-                // Создайте цену продукта
+              
                 Label productPriceLabel = new Label
                 {
                     Text = product.Price,
@@ -196,7 +192,7 @@ namespace rpm_prodject
                     HorizontalTextAlignment = TextAlignment.Start
                 };
 
-                // Создайте стек для кнопок увеличения и уменьшения количества
+                
                 StackLayout productQuantityStackLayout = new StackLayout
                 {
                     Orientation = StackOrientation.Horizontal,
@@ -204,7 +200,7 @@ namespace rpm_prodject
                     Spacing = 15
                 };
 
-                // Создайте кнопку уменьшения количества
+                
                 ImageButton productQuantityMinusButton = new ImageButton
                 {
                     Source = "minuse8.png",
@@ -215,7 +211,7 @@ namespace rpm_prodject
                     CommandParameter = product.Id
 
                 };
-                // Создайте метку количества
+                
                 Label productQuantityLabel = new Label
                 {
                     Text = Busket.productQuantities[product.Id].ToString(),
@@ -236,8 +232,8 @@ namespace rpm_prodject
 
                     if (Busket.productQuantities.ContainsKey(productId))
                     {
-                        Busket.productQuantities[productId]--; // Уменьшение количества на 1
-                        productQuantityLabel.Text = Busket.productQuantities[productId].ToString(); // Обновление текста метки
+                        Busket.productQuantities[productId]--; 
+                        productQuantityLabel.Text = Busket.productQuantities[productId].ToString();
                         Busket.cost -= float.Parse(prod.Price);
                         price1.Text = $"${Busket.cost}";
                         price_sale.Text = $"${Busket.cost - (Busket.cost / 100 * 10)}";
@@ -258,14 +254,14 @@ namespace rpm_prodject
                             LoadForm();
                             MyCart my = new MyCart();
                             var navigation = Application.Current.MainPage.Navigation;
-                            navigation.PopAsync(); // Убрать текущую страницу
+                            navigation.PopAsync(); 
                             navigation.PushAsync(new MyCart());
 
                         }
                     }
                 };
 
-                // Создайте кнопку увеличения количества
+                
                 ImageButton productQuantityPlusButton = new ImageButton
                 {
                     Source = "pluce8.png",
@@ -276,7 +272,7 @@ namespace rpm_prodject
                     CommandParameter = product.Id
 
                 };
-                //Busket.productQuantities.Add("1", int.Parse(product.Id));
+                
                 productQuantityPlusButton.Clicked += (sender, args) =>
                 {
 
@@ -286,35 +282,35 @@ namespace rpm_prodject
 
                     if (Busket.productQuantities.ContainsKey(productId))
                     {
-                        Busket.productQuantities[productId]++; // Увеличение количества на 1
+                        Busket.productQuantities[productId]++; 
                         Busket.cost += float.Parse(prod.Price);
                         price1.Text = $"${Busket.cost}";
                         price_sale.Text = $"${Busket.cost - (Busket.cost / 100 * 10)}";
                         price2.Text = $"${Busket.cost - (Busket.cost / 100 * 10)}";
-                        productQuantityLabel.Text = Busket.productQuantities[productId].ToString(); // Обновление текста метки
+                        productQuantityLabel.Text = Busket.productQuantities[productId].ToString(); 
                     }
                 };
 
-                // Добавьте кнопки в стек количества
+               
                 productQuantityStackLayout.Children.Add(productQuantityMinusButton);
                 productQuantityStackLayout.Children.Add(productQuantityLabel);
                 productQuantityStackLayout.Children.Add(productQuantityPlusButton);
 
-                // Добавьте содержимое в стек карточки
+               
                 productCardContentStackLayout.Children.Add(productTitleLabel);
                 productCardContentStackLayout.Children.Add(productPriceLabel);
                 productCardContentStackLayout.Children.Add(productQuantityStackLayout);
 
-                // Создайте стек для размера и кнопки удаления
+              
                 StackLayout productSizeAndDeleteStackLayout = new StackLayout
                 {
-                    // Grid.Column = 2,
+                    
                     HorizontalOptions = LayoutOptions.FillAndExpand
                 };
                 productCardGrid.Children.Add(productSizeAndDeleteStackLayout);
                 Grid.SetColumn(productSizeAndDeleteStackLayout, 2);
 
-                // Создайте метку размера
+                
                 Label productSizeLabel = new Label
                 {
                     Text = Busket.size[i],
@@ -328,7 +324,7 @@ namespace rpm_prodject
                     HorizontalTextAlignment = TextAlignment.Center
                 };
 
-                // Создайте кнопку удаления
+               
                 ImageButton productDeleteButton = new ImageButton
                 {
                     Source = "bin8.png",
@@ -341,21 +337,19 @@ namespace rpm_prodject
                     CommandParameter = product.Id
                 };
                 productDeleteButton.Clicked += delete_item;
-                // Добавьте размер и кнопку в стек размера и удаления
+               
                 productSizeAndDeleteStackLayout.Children.Add(productSizeLabel);
                 productSizeAndDeleteStackLayout.Children.Add(productDeleteButton);
 
-                // Добавьте содержимое в Grid карточки
+               
                 productCardGrid.Children.Add(productImage);
                 productCardGrid.Children.Add(productCardContentStackLayout);
                 productCardGrid.Children.Add(productSizeAndDeleteStackLayout);
 
-                // Добавьте Grid карточки в стек карточек
+               
                 productCardStackLayout.Children.Add(productCardGrid);
 
-                // Добавьте стек карточек в основной макет
-                // Content = productCardStackLayout;
-
+           
                 i++;
                 Busket.cost += float.Parse(product.Price);
             }

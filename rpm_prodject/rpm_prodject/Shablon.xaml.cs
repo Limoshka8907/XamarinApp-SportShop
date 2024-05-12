@@ -396,7 +396,7 @@ namespace rpm_prodject.images
                                 Id = reader["goods_id"].ToString(),
                                 Name = reader["goods_name"].ToString(),
                                 Price = reader["goods_price"].ToString(),
-                                //Image = "rpm_prodject.images.RedKross.png"
+                        
                                 Image = reader["goods_img_path"].ToString()
                             });
                         }
@@ -489,7 +489,7 @@ namespace rpm_prodject.images
 
                             if (i % 2 == 0)
                             {
-                                //stackLayout.Children.Add(frame1);
+                          
                                 stackLayout.Children.Add(frame1);
                                 mainLayout.Children.Add(stackLayout);
                             }
@@ -542,7 +542,7 @@ namespace rpm_prodject.images
                                 Id = reader["goods_id"].ToString(),
                                 Name = reader["goods_name"].ToString(),
                                 Price = reader["goods_price"].ToString(),
-                                //Image = "rpm_prodject.images.RedKross.png"
+                             
                                 Image = reader["goods_img_path"].ToString()
                             });
                         }
@@ -639,7 +639,7 @@ namespace rpm_prodject.images
 
                                 if (i % 2 == 0)
                                 {
-                                    //stackLayout.Children.Add(frame1);
+                                  
                                     stackLayout.Children.Add(frame1);
                                     mainLayout.Children.Add(stackLayout);
                                 }

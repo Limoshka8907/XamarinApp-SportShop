@@ -16,7 +16,7 @@ namespace rpm_prodject
     public partial class Details : ContentPage
     {
         private ObservableCollection<Product> products;
-       // public static ObservableCollection<Favourites> FavouritesList { get; set; }
+       
 
         Product _product;
         string Id_g = "";
@@ -26,20 +26,15 @@ namespace rpm_prodject
         {
             InitializeComponent();
             LoadFavourites();
-            //FavouritesList = new ObservableCollection<Favourites>();
             _product = __product;
             
             NavigationPage.SetHasNavigationBar(this, false);
             back.Source = ImageSource.FromResource("rpm_prodject.images.back.png");
             Basket.Source = ImageSource.FromResource("rpm_prodject.images.Basket.png");
-            //big_kross7.Source = ImageSource.FromResource("rpm_prodject.images.RedKross.png");
-            //first_kross7.Source = ImageSource.FromResource("rpm_prodject.images.first_kross7.png");
-            //sec_kross7.Source = ImageSource.FromResource("rpm_prodject.images.sec_kross7.png");
-            //th_kross7.Source = ImageSource.FromResource("rpm_prodject.images.th_kross7.png");
+
 
             products = new ObservableCollection<Product>();
 
-            // Подключаемся к базе данных и получаем список товаров
             string srvrdbname = "rpm";
             string srvrname = "192.168.1.96";
             string srvrusername = "samir";
@@ -78,7 +73,12 @@ namespace rpm_prodject
                             priceEnter.Text = $"$ {Price}";
                             price_Enter.Text = $"$ {Price}";
                         }
-                        if(cat_id != "1" || cat_id != "5")
+                        sizeStack.IsVisible = true;
+                        colorsStack.IsVisible = true;
+                        colorLabel.IsVisible =true;
+                        sizeLabel.IsVisible = true;
+                        sizeStandart.IsVisible = true;
+                        if (cat_id != "1" && cat_id != "5")
                         {
                             sizeStack.IsVisible = false;
                             colorsStack.IsVisible = false;
@@ -158,13 +158,13 @@ namespace rpm_prodject
             }
         }
 
-        private Button lastSelectedSizeButton = null; // Поле для последней нажатой кнопки выбора размера
+        private Button lastSelectedSizeButton = null; 
 
         private void btn_blur(object sender, EventArgs e)
         {
             Button currentButton = (Button)sender;
 
-            // Если текущая кнопка уже нажата, просто возвращаем прозрачный фон (или прошлый фон перед перекрашиванием)
+ 
             if (currentButton == lastSelectedSizeButton)
             {
                 currentButton.BackgroundColor = Color.Transparent;
@@ -172,32 +172,30 @@ namespace rpm_prodject
             }
             else
             {
-                // Возвращаем предыдущей кнопке прозрачный фон
+
                 if (lastSelectedSizeButton != null)
                 {
                     lastSelectedSizeButton.BackgroundColor = Color.Transparent;
                 }
 
-                // Меняем фон текущей кнопки и запоминаем как последнюю выбранную
+
                 currentButton.BackgroundColor = Color.FromHex("#B2A7A7A7");
                 lastSelectedSizeButton = currentButton;
 
-                // Сохраняем выбранный размер в Busket.size
-                // Предполагая, что Busket.size — это неключевое хранилище, предназначенное только для одного значения
         
             }
         }
         List<Button> buttons_color = new List<Button>();
         List<Color> colors = new List<Color>();
-        private Button lastSelectedButton = null; // Добавляем поле для последней нажатой кнопки
-        private Color lastSelectedColor; // Поле для сохранения цвета последней нажатой кнопки
+        private Button lastSelectedButton = null; 
+        private Color lastSelectedColor; 
 
         private void btn_color_blur(object sender, EventArgs args)
         {
             Button currentButton = (Button)sender;
             Color currentColor = currentButton.BackgroundColor;
 
-            // Если кнопка уже была выбрана ранее, просто возвращаем ей исходный цвет
+
             if (currentButton == lastSelectedButton)
             {
                 currentButton.BackgroundColor = lastSelectedColor;
@@ -205,24 +203,22 @@ namespace rpm_prodject
             }
             else
             {
-                // Возвращаем предыдущей выбранной кнопке исходный цвет, если это не первое нажатие
+       
                 if (lastSelectedButton != null)
                 {
                     lastSelectedButton.BackgroundColor = lastSelectedColor;
                 }
 
-                // Сохраняем текущую нажатую кнопку и её цвет
+          
                 lastSelectedButton = currentButton;
                 lastSelectedColor = currentColor;
 
-                // Меняем фон текущей кнопки
+       
                 currentButton.BackgroundColor = Color.FromHex("A2A7A7A7");
 
                
             }
 
-            // Сохраняем выбранный цвет в 'Busket.color', если это необходимо
-            // Однако, нужно быть осторожным с логикой Busket.color, чтобы не добавлять дубликаты
         }
 
         private async void Back(object sender, System.EventArgs e)
@@ -234,7 +230,7 @@ namespace rpm_prodject
 
             if (Busket._products.Any(p => p.Id == Id_g))
             {
-                // Уведомление, что продукт уже существует
+      
                 await DisplayAlert("Ошибка", "Такой товар уже добавлен.", "Ok");
             }
             else
@@ -268,10 +264,10 @@ namespace rpm_prodject
         }
         private void LoadFavourites()
         {
-            // Получаем настройки приложения
+
             var settings = Application.Current.Properties;
 
-            // Если есть избранное в настройках приложения, загружаем его
+
             if (settings.ContainsKey("FavouritesList"))
             {
                 Favourites.FavouritesList = (List<Product>)settings["FavouritesList"];
@@ -280,19 +276,19 @@ namespace rpm_prodject
 
         private void SaveFavourites()
         {
-            // Получаем настройки приложения
+    
             var settings = Application.Current.Properties;
 
-            // Сохраняем избранное в настройки приложения
+
             settings["FavouritesList"] = Favourites.FavouritesList;
         }
 
         private void add_favourite(object sender, EventArgs e)
         {
-            // Добавляем продукт в список избранного
+
             Favourites.FavouritesList.Add(_product);
 
-            // Сохраняем избранное в настройки приложения
+
             SaveFavourites();
         }
 

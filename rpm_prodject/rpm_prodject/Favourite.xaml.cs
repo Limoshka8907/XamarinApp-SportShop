@@ -19,14 +19,7 @@ namespace rpm_prodject
             NavigationPage.SetHasNavigationBar(this, false);
             hearth99.Source = ImageSource.FromResource("rpm_prodject.images.hearth99.png");
             back.Source = ImageSource.FromResource("rpm_prodject.images.back.png");
-            //WhiteBlueRed9.Source = ImageSource.FromResource("rpm_prodject.images.WhiteBlueRed9.png");
-            //Blue9.Source = ImageSource.FromResource("rpm_prodject.images.Blue9.png");
-            //WhiteRed9.Source = ImageSource.FromResource("rpm_prodject.images.WhiteRed9.png");
-            //WhiteBlue9.Source = ImageSource.FromResource("rpm_prodject.images.WhiteBlue9.png");
 
-            //Details details = new Details(null);
-            //ObservableCollection <Favourites> fav = GetFavourites();
-            //Details details = new Details();
             try
             {
                 int i = 0;
@@ -106,7 +99,7 @@ namespace rpm_prodject
 
 
 
-                    //stackLayout.Children.Add(frame1);
+         
                     mainLayour.Children.Add(frame1);
                     i++;
                 }

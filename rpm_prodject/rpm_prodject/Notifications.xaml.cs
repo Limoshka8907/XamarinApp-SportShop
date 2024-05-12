@@ -34,12 +34,12 @@ namespace rpm_prodject
             IsClearedP.date = dateTime ;
             await Navigation.PopAsync();
         }
-        private async void details_but(object sender, EventArgs e)
+        private void details_but(object sender, EventArgs e)
         {
 
         }
 
-        private async void clear_all(object sender, EventArgs e)
+        private void clear_all(object sender, EventArgs e)
         {
             lay1.IsVisible = false;
             lay2.IsVisible = false;

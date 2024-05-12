@@ -81,7 +81,7 @@ namespace rpm_prodject
             DbManager.user_login = email;
             DisplayAlert("", "Вы успешно вошли в систему!", "OK");
             Navigation.PushAsync(new Home());
-            //Navigation.PushAsync(new AccountSettings());
+       
         }
     }
 }

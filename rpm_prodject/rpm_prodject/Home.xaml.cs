@@ -30,21 +30,14 @@ namespace rpm_prodject
             location.Source = ImageSource.FromResource("rpm_prodject.images.location.png");
             Basket.Source = ImageSource.FromResource("rpm_prodject.images.Basket.png");
             Search.Source = ImageSource.FromResource("rpm_prodject.images.Search.png");
-            //RedKross.Source = ImageSource.FromResource("rpm_prodject.images.RedKross.png");
-            //RedKross1.Source = ImageSource.FromResource("rpm_prodject.images.RedKross.png");
-            //BlueKross.Source = ImageSource.FromResource("rpm_prodject.images.BlueKross.png");
-            //WhiteBlueKross.Source = ImageSource.FromResource("rpm_prodject.images.WhiteBlueKross.png");
-            //WhiteBlueKross1.Source = ImageSource.FromResource("rpm_prodject.images.WhiteBlueKross.png");
-            //Pluce.Source = ImageSource.FromResource("rpm_prodject.images.Pluce.png");
-            //Pluce1.Source = ImageSource.FromResource("rpm_prodject.images.Pluce.png");
-            //Pluce2.Source = ImageSource.FromResource("rpm_prodject.images.Pluce.png");
+          
 
             picker.SelectedIndex = 0;
             NavigationPage.SetHasNavigationBar(this, false);
-            // Создаем коллекцию товаров
+          
             products = new ObservableCollection<Product>();
 
-            // Подключаемся к базе данных и получаем список товаров
+         
             string srvrdbname = "rpm";
             string srvrname = "192.168.1.96";
             string srvrusername = "samir";
@@ -67,13 +60,13 @@ namespace rpm_prodject
                     {
                         while (reader.Read())
                         {
-                            // Сохраните массив байтов в файл
+                           
                             products.Add(new Product
                             {
                                 Id = reader["goods_id"].ToString(),
                                 Name = reader["goods_name"].ToString(),
                                 Price = reader["goods_price"].ToString(),
-                                //Image = "rpm_prodject.images.RedKross.png"
+                                
                                 Image = reader["goods_img_path"].ToString()
                             });
                         }
@@ -194,7 +187,7 @@ namespace rpm_prodject
                     {
                         Button button = new Button
                         {
-                            Text = category.Name, // Установка текста кнопки по названию продукта из базы данных
+                            Text = category.Name, 
                             TextColor = Color.White,
                             TextTransform = TextTransform.None,
                             BackgroundColor = Color.FromHex("#5B9EE1"),
@@ -205,10 +198,10 @@ namespace rpm_prodject
                             FontSize = 16,
                             CommandParameter = category
                         };
-                        // Обработчик событий для кнопки
+                     
                         button.Clicked += krossovki_but;
 
-                        // Добавление кнопки в разметку
+                    
                         categoryStack.Children.Add(button);
                     }
 
@@ -304,7 +297,7 @@ namespace rpm_prodject
 
         public void SearchS_but(object sender, System.EventArgs e)
         {
-            string sear = SearchS.Text.Trim(); // Удаляем пробелы в начале и в конце строки
+            string sear = SearchS.Text.Trim(); 
 
             if (string.IsNullOrEmpty(sear) || sear.Length < 1 || sear.Length > 30 || string.IsNullOrWhiteSpace(sear))
             {
@@ -318,12 +311,12 @@ namespace rpm_prodject
                 return;
             }
 
-            //Navigation.PushAsync(new Home());
+ 
         }
 
         private bool IsValidInput(string input)
         {
-            // Проверяем, что ввод содержит только буквы, цифры и пробелы
+            
             return input.All(c => char.IsLetterOrDigit(c) || char.IsWhiteSpace(c));
         }
 
@@ -378,7 +371,7 @@ namespace rpm_prodject
         }
         private void OnSearchCompleted(object sender, EventArgs e)
         {
-            // Действие при нажатии на кнопку 'Enter', например переход на другую страницу
+         
             string entered = ((Entry)sender).Text;
             Navigation.PushAsync(new Shablon(entered, 0));
         }

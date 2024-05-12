@@ -51,8 +51,8 @@ namespace rpm_prodject
                 sqlCommand.Connection = sqlConnection;
                 sqlCommand.CommandType = System.Data.CommandType.Text;
 
-                DateTime time = DateTime.Now; // Используется текущее время
-                string format = "yyyy-MM-dd HH:mm:ss"; // Формат для SQL datetime
+                DateTime time = DateTime.Now; 
+                string format = "yyyy-MM-dd HH:mm:ss"; 
                 string sqlFormattedDate = time.ToString(format);
                 SelectUserId();
                 sqlCommand.CommandText = "INSERT INTO Orders (user_id, order_date, full_price) VALUES (@UserId, @Date, @Price)";
@@ -74,16 +74,6 @@ namespace rpm_prodject
                 sqlCommand.Connection = sqlConnection;
                 sqlCommand.CommandType = System.Data.CommandType.Text;
 
-                //DateTime time = DateTime.Now; // Используется текущее время
-                //string format = "yyyy-MM-dd HH:mm:ss"; // Формат для SQL datetime
-                //string sqlFormattedDate = time.ToString(format);
-                //SelectUserId();
-                //sqlCommand.CommandText = "INSERT INTO Orders (user_id, order_date, full_price) VALUES (@UserId, @Date, @Price)"; 
-                //sqlCommand.Parameters.AddWithValue("@UserId", user_id.ToString());
-                //sqlCommand.Parameters.AddWithValue("@Date", sqlFormattedDate);
-                //sqlCommand.Parameters.AddWithValue("@Price", Busket.cost-(Busket.cost/100 * 10));
-
-                //sqlCommand.ExecuteNonQuery();
                 if(size == null || size == "")
                 {
                     size = "\t";
