@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
 namespace rpm_prodject
@@ -18,6 +19,7 @@ namespace rpm_prodject
         public MyCart()
         {
             InitializeComponent();
+            Busket.cost = 0;
             NavigationPage.SetHasNavigationBar(this, false);
             back.Source = ImageSource.FromResource("rpm_prodject.images.back.png");
 
@@ -33,12 +35,14 @@ namespace rpm_prodject
             string productId = (string)button.CommandParameter;
             var prod = Busket._products.FirstOrDefault(p => p.Id == productId);
             Busket.cost -= float.Parse(prod.Price) * Busket.productQuantities[prod.Id];
-            Busket._products.Remove(prod);
             Busket.productQuantities.Remove(prod.Id);
+            Busket.size.RemoveAt(Busket._products.IndexOf(prod));
+            Busket.color.RemoveAt(Busket._products.IndexOf(prod));
+            Busket._products.Remove(prod);
             price1.Text = $"${Busket.cost}";
             price_sale.Text = $"${Busket.cost - (Busket.cost / 100 * 10)}";
             price2.Text = $"${Busket.cost - (Busket.cost / 100 * 10)}";
-            LoadForm();
+          
             MyCart my = new MyCart();
             var navigation = Application.Current.MainPage.Navigation;
             await navigation.PopAsync(); 
@@ -144,6 +148,7 @@ namespace rpm_prodject
                 };
                 productCardGrid.Children.Add(productImage);
                 Grid.SetColumn(productImage, 0);
+
                 ImageButton colorImage = new ImageButton
                 {
                    
@@ -244,7 +249,12 @@ namespace rpm_prodject
                             {
                                 if (Busket.productQuantities[prod.Id] == 0)
                                 {
-                                    Busket.color.RemoveAt(j);
+                                    Busket.cost -= float.Parse(prod.Price) * Busket.productQuantities[prod.Id];
+                                    Busket.productQuantities.Remove(prod.Id);
+                                    Busket.size.RemoveAt(Busket._products.IndexOf(prod));
+                                    Busket.color.RemoveAt(Busket._products.IndexOf(prod));
+                                    Busket._products.Remove(prod);
+                                    
                                 }
                                 j++;
                             }
@@ -351,7 +361,7 @@ namespace rpm_prodject
 
            
                 i++;
-                Busket.cost += float.Parse(product.Price);
+                Busket.cost += float.Parse(product.Price) * Busket.productQuantities[product.Id];
             }
         }
 

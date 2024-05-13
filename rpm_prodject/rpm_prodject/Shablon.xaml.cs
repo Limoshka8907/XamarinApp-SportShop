@@ -55,13 +55,13 @@ namespace rpm_prodject.images
                                         Id = reader["goods_id"].ToString(),
                                         Name = reader["goods_name"].ToString(),
                                         Price = reader["goods_price"].ToString(),
-                                        //Image = "rpm_prodject.images.RedKross.png"
+                                       
                                         Image = reader["goods_img_path"].ToString()
                                     });
                                 }
                                 products = products.OrderBy(x => Guid.NewGuid()).ToList();
                                 Random rnd = new Random();
-                                int removeCount = rnd.Next(1, 4); // Количество элементов для удаления
+                                int removeCount = rnd.Next(1, 4); 
                                 products.RemoveRange(products.Count - removeCount, removeCount);
 
                                 foreach (var product in products)
@@ -171,7 +171,7 @@ namespace rpm_prodject.images
 
                                     if (i % 2 == 0)
                                     {
-                                        //stackLayout.Children.Add(frame1);
+                                    
                                         stackLayout.Children.Add(frame1);
                                         mainLayout.Children.Add(stackLayout);
                                     }
@@ -336,7 +336,7 @@ namespace rpm_prodject.images
 
                                     if (i % 2 == 0)
                                     {
-                                        //stackLayout.Children.Add(frame1);
+                                        
                                         stackLayout.Children.Add(frame1);
                                         mainLayout.Children.Add(stackLayout);
                                     }
@@ -355,10 +355,7 @@ namespace rpm_prodject.images
                 }
             }
             back.Source = ImageSource.FromResource("rpm_prodject.images.back.png");
-            //WhiteBlueRed9.Source = ImageSource.FromResource("rpm_prodject.images.WhiteBlueRed9.png");
-            //Blue9.Source = ImageSource.FromResource("rpm_prodject.images.Blue9.png");
-            //WhiteRed9.Source = ImageSource.FromResource("rpm_prodject.images.WhiteRed9.png");
-            //WhiteBlue9.Source = ImageSource.FromResource("rpm_prodject.images.WhiteBlue9.png");
+       
 
         }
 

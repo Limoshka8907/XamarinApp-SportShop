@@ -242,7 +242,22 @@ namespace rpm_prodject
                     Busket.size.Add(lastSelectedSizeButton.Text);
                     await Navigation.PushAsync(new MyCart());
                 }
-                else if(_product != null && (cat_id != "1" || cat_id != "5"))
+                else if (cat_id == "2")
+                {
+                    if(lastSelectedSizeButton == null)
+                    {
+                        await DisplayAlert("Уведомление", "Ошибка, обратите внимание и убедитесь что все параметры выбраны", "ОК");
+                    }
+                    else
+                    {
+                        Busket._products.Add(_product);
+                        Busket.color.Add(Color.Transparent);
+                        Busket.size.Add(lastSelectedSizeButton.Text);
+                        await Navigation.PushAsync(new MyCart());
+                    }
+
+                }
+                else if(_product != null && (cat_id != "1" && cat_id != "5"))
                 {
                     
                     Busket._products.Add(_product);

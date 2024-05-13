@@ -273,8 +273,7 @@ namespace rpm_prodject
                             CommandParameter = product
                        };
                         imgbtn.Clicked += details_but;
-                        //stack_special.Children.Add(frame);
-                        //grid.Parent = frame;
+                        
                         stackLayout2_2.Children.Add(imgbtn);
                         stackLayout1.Children.Add(lbl1);
                         stackLayout1.Children.Add(lbl2);
