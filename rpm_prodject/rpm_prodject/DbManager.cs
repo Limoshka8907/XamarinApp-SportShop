@@ -53,7 +53,9 @@ namespace rpm_prodject
 
                 DateTime time = DateTime.Now; 
                 string format = "yyyy-MM-dd HH:mm:ss"; 
-                string sqlFormattedDate = time.ToString(format);
+                //string sqlFormattedDate = time.ToString(format);
+                string sqlFormattedDate = "2024-07-05 15:33:20.000";
+                
                 SelectUserId();
                 sqlCommand.CommandText = "INSERT INTO Orders (user_id, order_date, full_price) VALUES (@UserId, @Date, @Price)";
                 sqlCommand.Parameters.AddWithValue("@UserId", user_id.ToString());

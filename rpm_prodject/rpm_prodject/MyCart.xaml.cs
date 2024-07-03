@@ -67,7 +67,7 @@ namespace rpm_prodject
 ;
                         continue;
                     }
-   
+                    
                     dbManager.InsertOrders(product, Busket.cost.ToString(), Busket.productQuantities[product.Id], Busket.color[i].ToHex().ToString(), Busket.size[i]);
                     dbManager.UpdateGoodCount((count - Busket.productQuantities[product.Id]).ToString(), product.Id);
                     i++;
@@ -196,15 +196,12 @@ namespace rpm_prodject
                     TextColor = Color.Black,
                     HorizontalTextAlignment = TextAlignment.Start
                 };
-
-                
                 StackLayout productQuantityStackLayout = new StackLayout
                 {
                     Orientation = StackOrientation.Horizontal,
                     VerticalOptions = LayoutOptions.EndAndExpand,
                     Spacing = 15
                 };
-
                 
                 ImageButton productQuantityMinusButton = new ImageButton
                 {
